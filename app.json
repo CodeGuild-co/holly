@@ -1,0 +1,6 @@
+{
+  "name": "MyBlog",
+  "description": "A skeleton blog built in JS for CodeGuild",
+  "repository": "https://github.com/CodeGuild-co/base-js",
+  "keywords": ["node", "express", "static"]
+}
