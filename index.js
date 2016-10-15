@@ -34,7 +34,7 @@ app.get('/', function(request, response) {
 				var heading = lines[0].slice(4);
 				var a = heading.length;
 				heading = heading.slice(0, a-5);
-				html = lines[2];
+				html = lines[1];
 				var i = 2;	
 				if (lines[i].length > 2){			
 					while (lines[i].slice(4) == "") {
