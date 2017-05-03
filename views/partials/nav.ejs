@@ -1,6 +1,13 @@
 <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <ul class="nav navbar-nav">
+        <script>
+    $(".nav li").on("click", function() {
+      $(".nav li").removeClass("active");
+      $(this).addClass("active");
+    });
+
+</script>
       <li class="active">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
       </li>
@@ -18,13 +25,6 @@
 	   <a href="/">Experimenting</a>
 	</li>
     </ul>
-    <script>
-    $(".nav li").on("click", function() {
-      $(".nav li").removeClass("active");
-      $(this).addClass("active");
-    });
-
-</script>
   </div>
 </nav>
 
