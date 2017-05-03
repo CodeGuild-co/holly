@@ -54,10 +54,6 @@ app.get('/', function(request, response) {
 	});
 });
 
-$('.nav li').click(function(){
-    $(this).addClass('active').siblings().removeClass('active');
-});
-
 app.get('/posts/:post/', function(request, response) {
 	var path = 'views/posts/' + request.params.post;
 	fs.readFile(path, 'utf-8', function(err, data) {
