@@ -48,7 +48,7 @@ app.get('/', function(request, response) {
 				if (html.length > 200){ //cut string to 200 chars
 					html = html.slice(0, 200); }			
 				html = html + "...";
-           	 	posts.push({title: file, content: html, link: heading}); //add the blog post to the array of posts
+           	 	posts.push({title: heading, content: html, link: file}); //add the blog post to the array of posts
 				counter--;
 				if (counter === 0) { //when gone through all posts, render the posts using the index.ejs template
 					response.render('pages/index', {posts: posts}); //creates homepage
