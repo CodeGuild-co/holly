@@ -4,8 +4,8 @@
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 <script>
-$(function() {
-  var page = window.location.pathname;
-  $('.nav.navbar-nav li').find('a[href="'+ page +'"]').addClass('active');
-});
+$("ul li").on("click", function() {
+    $("li").removeClass("active");
+    $(this).addClass("active");
+  });
 </script>
