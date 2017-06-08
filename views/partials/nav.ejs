@@ -18,9 +18,9 @@
 	   <a href="/posts/firstpost.ejs/">Experimenting</a>
 	  </li>
 	  	<script>$('.nav li').click(function(){
-			$('.nav li').removeClass('active');
-			$(this).addClass('active');
-		}) </script>
+			$(this).addClass('active').siblings().removeClass('active');
+			});
+		</script>
     </ul>
   </div>
 </nav>
