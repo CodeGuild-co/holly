@@ -56,6 +56,10 @@ app.get('/', function(request, response) {
         	});	
     	});
 	});
+	$("ul li").on("click", function() {
+    		$("li").removeClass("active");
+    		$(this).addClass("active");
+  	});
 });
 
 //creates a route handler for the blog pages
