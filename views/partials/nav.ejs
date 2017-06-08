@@ -25,7 +25,4 @@
 	$('ul.nav a').filter(function() {
 	    return (this.href == url || /\/posts\//.test(this.href));
 	}).parent().addClass('active');
-	$('ul.nav a').filter(function() {
-	    return this.href == url;
-	}).parent().siblings().removeClass('active');
 </script>
