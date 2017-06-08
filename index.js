@@ -33,21 +33,21 @@ app.get('/', function(request, response) {
 			counter++; //increase posts count
         	fs.readFile(dir + file, 'utf-8', function(err, html) { //for each file
             	if (err) throw err; //handle errors
-				file = "/posts/" + file + "/"; //file path
-				var lines = html.split('\n');
-				var heading = lines[0].slice(4); //take off first 4 characters (<h3>)
-				var a = heading.length;
-				heading = heading.slice(0, a-5); //take off last 5 chars (</h3>)
-				html = lines[1];
-				var i = 2;	
-				if (lines[i].length > 2){			
-					while (lines[i].slice(4) == "") { //if line is not a html tag
-						i = i + 1;
-						html = lines[i]; }
-				}
-				if (html.length > 200){ //cut string to 200 chars
-					html = html.slice(0, 200); }			
-				html = html + "...";
+			file = "/posts/" + file + "/"; //file path
+			var lines = html.split('\n');
+			var heading = lines[0].slice(4); //take off first 4 characters (<h3>)
+			var a = heading.length;
+			heading = heading.slice(0, a-5); //take off last 5 chars (</h3>)
+			html = lines[1];
+			var i = 2;	
+			if (lines[i].length > 2){			
+				while (lines[i].slice(4) == "") { //if line is not a html tag
+					i = i + 1;
+					html = lines[i]; }
+			}
+			if (html.length > 200){ //cut string to 200 chars
+				html = html.slice(0, 200); }			
+			html = html + "...";
            	 	posts.push({title: heading, content: html, link: file}); //add the blog post to the array of posts
 				counter--;
 				if (counter === 0) { //when gone through all posts, render the posts using the index.ejs template
@@ -60,7 +60,7 @@ app.get('/', function(request, response) {
 
 //creates a route handler for the blog pages
 app.get('/posts/:post/', function(request, response) {
-	var path = 'views/posts/' + request.params.post; //path is the path of the post in the parameter
+	var path = '/views/posts/' + request.params.post; //path is the path of the post in the parameter
 	fs.readFile(path, 'utf-8', function(err, data) {
 		if (err) throw err;	
     	response.render('posts/template', {data: data}); //render (create) the post using the template
