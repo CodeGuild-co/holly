@@ -20,31 +20,14 @@
     </ul>
   </div>
   <script>
-	var url = window.location;
-	/*$('ul.nav a').filter(function() {
-	    return (this.href == url);
-	}).parent().addClass('active'); */
-	
+	var url = window.location;	
 	$('ul.nav a').filter(function() {
-	    return (this.href == url);
+		if(url.slice(-1) == #) {
+			alert("Hello World");
+		}
+	    	return (this.href == url);
 	}).parent().addClass('active').closest('ul').parent().addClass('active').siblings().removeClass('active');
 	
-	if(url.slice(-1) == #) {
-		alert("Hello World");
-	}
-	
-	/* $('ul.nav a').filter(function() {
-	    return (this.href == url);
-	}).parent().siblings().removeClass('active'); */
-	
-	/* $('ul.nav a').filter(function() {
-		if(/\/posts\//.test(this.href)){
-			return true;
-		}
-		else{
-			return false;
-		}
-	}) */
 </script>
 </nav>
 
