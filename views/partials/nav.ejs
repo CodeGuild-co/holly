@@ -24,10 +24,12 @@
 	var url = window.location;
 	$('ul.nav a').filter(function() {
 	    return (this.href == url);
-	}).parent().siblings().removeClass('active');
+	}).parent().addClass('active');
+	
 	$('ul.nav a').filter(function() {
 	    return (this.href == url);
-	}).parent().addClass('active');
+	}).parent().siblings().removeClass('active');
+	
 	$('ul.nav a').filter(function() {
 		if(/\/posts\//.test(this.href)){
 			return true;
@@ -35,5 +37,5 @@
 		else{
 			return false;
 		}
-	}).parent().parent().addClass('active');
+	}).parent().addClass('active');
 </script>
